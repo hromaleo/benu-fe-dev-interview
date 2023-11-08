@@ -26,11 +26,9 @@ const NavItems = [
 </template>
 
 <style scoped lang="scss">
-$gray: #eee;
-
 header {
   padding: 1rem;
   margin-bottom: 1rem;
-  background-color: $gray;
+  background-color: $color-gray;
 }
 </style>

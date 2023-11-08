@@ -1,0 +1,10 @@
+@import 'colors/variables';
+
+@each $color-name, $value in $theme-colors {
+  .text-#{$color-name} {
+    color: $value;
+  }
+  .bg-#{$color-name} {
+    background-color: $value;
+  }
+}
