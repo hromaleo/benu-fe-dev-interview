@@ -1,4 +1,6 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import LectorsCarousel from "./LectorsCarousel.vue";
+</script>
 
 <template>
   <section class="container lectors-section">
@@ -8,6 +10,7 @@
       Problems trying to resolve the conflict between the two major realms of
       Classical physics: Newtonian mechanics
     </p>
+    <LectorsCarousel />
   </section>
 </template>
 
