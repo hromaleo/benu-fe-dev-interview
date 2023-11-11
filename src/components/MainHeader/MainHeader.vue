@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import BaseButton from "../BaseButton";
+import { performLogin, performRegistration } from "@/utils";
 
 const NavItems = [
   { name: "home" },
@@ -10,14 +11,6 @@ const NavItems = [
 
 function getItemTitle(name: (typeof NavItems)[number]["name"]) {
   return name.slice(0, 1).toUpperCase() + name.slice(1);
-}
-
-function performLogin() {
-  alert("Login");
-}
-
-function performRegistration() {
-  alert("Registration");
 }
 </script>
 
@@ -40,11 +33,13 @@ function performRegistration() {
           </ul>
         </nav>
         <div class="controls">
-          <button
-            class="login-btn text-green"
-            @click="performLogin"
-            v-text="'Login'"
-          />
+          <BaseButton
+            variant="transparent"
+            class="login-btn"
+            :on-click="performLogin"
+          >
+            Login
+          </BaseButton>
           <BaseButton
             variant="primary"
             class="register-btn"
@@ -59,6 +54,7 @@ function performRegistration() {
 </template>
 
 <style scoped lang="scss">
+// @TODO discuss possible fixed positioning with the UX designer
 .main-header {
   display: flex;
   align-items: center;
@@ -111,16 +107,9 @@ function performRegistration() {
   margin-left: auto;
 }
 
-.login-btn {
-  appearance: none;
-  background: none;
-  border: none;
-}
-
 .login-btn,
 .register-btn {
   font-weight: bold;
   text-transform: uppercase;
-  cursor: pointer;
 }
 </style>

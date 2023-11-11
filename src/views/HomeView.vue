@@ -1,5 +1,7 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import HeroSection from "@/components/HeroSection";
+</script>
 
 <template>
-  <h1>Home view</h1>
+  <HeroSection />
 </template>

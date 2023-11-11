@@ -1,26 +1,33 @@
 <script setup lang="ts">
-type ButtonVariant = "primary" | "secondary";
+type ButtonVariant = "primary" | "secondary" | "transparent";
 
-type ButtonProps = {
+type BaseButtonProps = {
   variant: ButtonVariant;
   inverted?: boolean;
   onClick: () => void;
 };
 
-const props = defineProps<ButtonProps>();
+const props = defineProps<BaseButtonProps>();
 
 function getVariantClasses(variant: ButtonVariant) {
   switch (variant) {
     case "primary":
-      return props.inverted ? "text-green bg-white" : "bg-green text-white";
+      return props.inverted
+        ? "text-green bg-pink-light"
+        : "bg-green text-white";
     case "secondary":
-      return props.inverted ? "text-pink bg-white" : "bg-pink text-white";
+      return props.inverted
+        ? "text-pink-light bg-pink-light"
+        : "bg-pink-light text-white";
+    case "transparent":
+      return "text-green bg-transparent";
   }
 }
 </script>
 
 <template>
   <button
+    type="button"
     :class="[
       'btn',
       getVariantClasses(props.variant),
@@ -34,12 +41,25 @@ function getVariantClasses(variant: ButtonVariant) {
 
 <style scoped lang="scss">
 .btn {
-  padding: 15px 25px;
+  padding: 1em 1.5em;
+  cursor: pointer;
   border: none;
   border-radius: 5px;
 
   &--inverted {
     border: 1px solid currentcolor;
+
+    &:hover,
+    &:focus {
+      opacity: 0.4;
+    }
+  }
+
+  &:not(&--inverted) {
+    &:hover,
+    &:focus {
+      opacity: 0.8;
+    }
   }
 }
 </style>
