@@ -33,4 +33,14 @@ export default {
     heading: "Get Quality Education",
     text: "@:packages.text",
   },
+  newsletter: {
+    title: "Newsletter",
+    heading: "Watch our Courses",
+    text: "@:packages.text",
+    emailInput: {
+      placeholder: "Your email",
+      button: "Subscribe",
+      error: "Please enter a valid email address",
+    },
+  },
 };

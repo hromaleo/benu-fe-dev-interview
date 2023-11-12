@@ -33,4 +33,14 @@ export default {
     heading: "Získejte kvalitní vzdělání",
     text: "@:packages.text",
   },
+  newsletter: {
+    title: "Newsletter",
+    heading: "Sledujte naše kurzy",
+    text: "@:packages.text",
+    emailInput: {
+      placeholder: "Váš email",
+      button: "Přihlásit se k odběru",
+      error: "Zadejte prosím platnou e-mailovou adresu",
+    },
+  },
 };
