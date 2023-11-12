@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import BaseButton from "../BaseButton";
 import { performLogin, performRegistration } from "@/utils";
+import { t } from "@/translations";
 
 const NavItems = [
   { name: "home" },
@@ -10,7 +11,7 @@ const NavItems = [
 ] as const;
 
 function getItemTitle(name: (typeof NavItems)[number]["name"]) {
-  return name.slice(0, 1).toUpperCase() + name.slice(1);
+  return t(`nav.${name}`);
 }
 </script>
 
@@ -18,7 +19,7 @@ function getItemTitle(name: (typeof NavItems)[number]["name"]) {
   <div class="bg-pink-light">
     <div class="container">
       <header class="main-header">
-        <h2 class="text-blue brandname">Brandname</h2>
+        <h2 class="text-blue brandname">{{ t("brandname") }}</h2>
         <nav>
           <ul class="nav-list">
             <li
@@ -38,14 +39,14 @@ function getItemTitle(name: (typeof NavItems)[number]["name"]) {
             class="login-btn"
             :on-click="performLogin"
           >
-            Login
+            {{ t("login") }}
           </BaseButton>
           <BaseButton
             variant="primary"
             class="register-btn"
             :on-click="performRegistration"
           >
-            Join Us
+            {{ t("register") }}
           </BaseButton>
         </div>
       </header>

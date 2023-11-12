@@ -1,14 +1,14 @@
 <script setup lang="ts">
 import LectorsCarousel from "./LectorsCarousel.vue";
+import { t } from "@/translations";
 </script>
 
 <template>
   <section class="container lectors-section">
-    <h6 class="text-green mini-heading">Team</h6>
-    <h3 class="text-blue main-heading">Get Quality Education</h3>
+    <h6 class="text-green mini-heading">{{ t("team") }}</h6>
+    <h3 class="text-blue main-heading">{{ t("lectors.heading") }}</h3>
     <p class="text-gray perex">
-      Problems trying to resolve the conflict between the two major realms of
-      Classical physics: Newtonian mechanics
+      {{ t("lectors.text") }}
     </p>
     <LectorsCarousel />
   </section>

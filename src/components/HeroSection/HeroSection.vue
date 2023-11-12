@@ -3,6 +3,7 @@ import { inject } from "vue";
 import BaseButton from "../BaseButton";
 import { learnMore, performRegistration } from "@/utils";
 import headerHeightKey from "@/headerProviderKey";
+import { t } from "@/translations";
 
 const headerHeight = inject(headerHeightKey);
 </script>
@@ -11,19 +12,17 @@ const headerHeight = inject(headerHeightKey);
   <section class="hero-background">
     <div class="container">
       <div class="hero-content">
-        <h5 class="text-green">Welcome</h5>
-        <h1 class="text-blue bfh">Best Learning Opportunities</h1>
+        <h5 class="text-green">{{ t("hero.welcome") }}</h5>
+        <h1 class="text-blue bfh">{{ t("hero.heading") }}</h1>
         <p class="text-gray perex">
-          <span class="bg-pink-light"
-            >Our goal is to make online education work for everyone</span
-          >
+          <span class="bg-pink-light">{{ t("hero.subheading") }}</span>
         </p>
         <div class="controls">
           <BaseButton variant="primary" :on-click="performRegistration">
-            Join Us
+            {{ t("register") }}
           </BaseButton>
           <BaseButton variant="primary" inverted :on-click="learnMore">
-            Learn More
+            {{ t("learnMore") }}
           </BaseButton>
         </div>
       </div>

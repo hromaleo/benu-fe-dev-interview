@@ -1,32 +1,32 @@
 <script setup lang="ts">
 import { learnMore } from "@/utils";
 import PackageItem from "./PackageItem.vue";
+import { t } from "@/translations";
 </script>
 
 <template>
   <section class="container packages-section">
     <div>
       <hr class="divider" />
-      <h2 class="text-blue heading">Affordable Packages</h2>
+      <h2 class="text-blue heading">{{ t("packages.heading") }}</h2>
       <p class="text-gray perex">
         <span class="text-gray">
-          Problems trying to resolve the conflict between the two major realms
-          of Classical physics: Newtonian mechanics
+          {{ t("packages.text") }}
         </span>
       </p>
-      <a href="#" class="learn-more-link" @click.prevent="learnMore"
-        >Learn More</a
-      >
+      <a href="#" class="learn-more-link" @click.prevent="learnMore">{{
+        t("learnMore")
+      }}</a>
     </div>
     <div class="items">
       <PackageItem
-        heading="Certified Teacher"
-        text="The gradual accumulation of information about"
+        :heading="t('packages.items.teacher.title')"
+        :text="t('packages.items.teacher.text')"
         icon-name="012-blackboards"
       />
       <PackageItem
-        heading="Expert instruction"
-        text="The gradual accumulation of information about"
+        :heading="t('packages.items.instruction.title')"
+        :text="t('packages.items.instruction.text')"
         icon-name="013-telescope-1"
       />
     </div>

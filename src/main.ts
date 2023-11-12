@@ -1,10 +1,13 @@
 import { createApp } from "vue";
+import { i18n } from "@/translations";
 import App from "./App.vue";
 import router from "./router";
 import "@/styles/index.scss";
 
 const app = createApp(App);
 
-app.use(router);
+app.use(router).use(i18n);
 
-app.mount("#app");
+router.isReady().then(() => {
+  app.mount("#app");
+});

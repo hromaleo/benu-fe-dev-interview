@@ -2,6 +2,21 @@
 import MainHeader from "@/components/MainHeader";
 import { onMounted, onUnmounted, provide, ref } from "vue";
 import headerHeightKey from "@/headerProviderKey";
+import { useRoute } from "vue-router";
+import { i18n } from "@/translations";
+
+const {
+  params: { lang },
+} = useRoute();
+
+function isSupportedLocale(locale: string): locale is "cs" | "en" {
+  return ["cs", "en"].includes(locale);
+}
+
+const langCode = lang?.toString();
+if (langCode && isSupportedLocale(langCode)) {
+  i18n.global.locale = langCode;
+}
 
 const header = ref<HTMLElement>();
 
