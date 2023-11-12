@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import MainHeader from "@/components/MainHeader";
+import MainFooter from "@/components/MainFooter";
 import { onMounted, onUnmounted, provide, ref } from "vue";
 import headerHeightKey from "@/headerProviderKey";
 import { useRoute } from "vue-router";
@@ -47,4 +48,5 @@ onUnmounted(() => {
   </div>
 
   <RouterView />
+  <MainFooter />
 </template>
